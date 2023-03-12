@@ -46,9 +46,6 @@ custom_fonts/font = SubResource( 1 )
 text = "<Name level progress>"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TableContainer" type="VBoxContainer" parent="Nine"]
 anchor_top = 0.18

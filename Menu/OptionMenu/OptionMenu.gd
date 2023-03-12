@@ -56,10 +56,10 @@ func create_bikes() -> void:
 	
 
 func create_levels() -> void:
-	var res := GameData.level_cfg.create(1, "Mountains")
-	# assert(res != OK, "ERROR: create_levels Mountains")
-	res = GameData.level_cfg.create(2, "City")
-	# assert(res != OK, "ERROR: create_levels City")
+	# var res := GameData.level_cfg.create(1, "Mountains")
+	GameData.level_cfg.create(1, "Горы")
+	# GameData.level_cfg.create(2, "City")
+	GameData.level_cfg.create(2, "Город")
 
 
 func create_tracks() -> void:

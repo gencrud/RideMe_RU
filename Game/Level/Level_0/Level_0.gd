@@ -85,7 +85,8 @@ static func create_for_cfg() -> void:
 	var _num_win = 4
 	var _init_time_level = 30
 	var _price = 0
-	var _issue: = "First experience: сollect the %s hourgrass"
+	var _issue_en: = "First experience: сollect the %s hourglass"
+	var _issue: = "Первый опыт: собрать песочные часы %s"
 	var _state: = LevelTrackStates.ACTIVE
 	
 	GameData.track_cfg.create(0, 1, _issue, _resource, _texture, _num_win, _init_time_level, _price, _state)

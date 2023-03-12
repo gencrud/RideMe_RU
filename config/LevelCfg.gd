@@ -53,4 +53,3 @@ func create(
 	config.set_value(section, KEY_TITLE, title)
 	config.set_value(section, KEY_PASSED_AT, passed_at)
 	return config.save(path_file_cfg)
-

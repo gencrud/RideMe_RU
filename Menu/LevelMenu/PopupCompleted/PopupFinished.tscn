@@ -5,15 +5,14 @@
 [node name="PopupFinished" instance=ExtResource( 1 )]
 
 [node name="Title" parent="NinePatchRect" index="0"]
-text = "You are a winner!"
+text = "Вы победитель!"
 
 [node name="Description" parent="NinePatchRect" index="1"]
-text = "Hey rider, you have passed the most difficult tracks 
-and you can rightly consider yourself 
-the best BMC racer!
+text = "Эй, гонщик, ты прошел самые сложные трассы и можешь 
+по праву считать себя лучшим гонщиком BMX!
 
-The community is already preparing new tracks for you in the next update. 
-Come back later!
+Сообщество уже готовит для тебя новые трассы.
+Ты крут! Возвращайся позже!!!
 
 "
 

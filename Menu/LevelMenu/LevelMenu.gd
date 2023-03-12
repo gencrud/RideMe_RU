@@ -158,9 +158,14 @@ func init_btn_current_node() -> void:
 
 func set_menu_options(level: Level_0) -> void:	
 	if is_instance_valid(level):
-		var level_text: String = "level: ....... %d" % [level.level_id]
-		var track_text: String = "track: .......... %d" % [level.track_id]
-		var price_text: String = "price: .................... %d" % [level.price]
+		# EN VERSION
+		# var level_text: String = "level: ....... %d" % [level.level_id]
+		# var track_text: String = "track: .......... %d" % [level.track_id]
+		# var price_text: String = "price: .................... %d" % [level.price]
+		# RU VERSION
+		var level_text: String = "уровень: ..................... %d" % [level.level_id]
+		var track_text: String = "трасса: ...................... %d" % [level.track_id]
+		var price_text: String = "цена: ........................... %d" % [level.price]
 		
 		menu_options.get_node('LevelIssue').set_text(level.init_issue())
 		menu_options.get_node('Level').set_text(level_text)

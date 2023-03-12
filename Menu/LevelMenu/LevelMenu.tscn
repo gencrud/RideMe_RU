@@ -50,11 +50,8 @@ margin_top = 29.3583
 margin_right = 722.885
 margin_bottom = 128.358
 custom_fonts/font = SubResource( 1 )
-text = "Choose a level:"
+text = "Выбрать уровень:"
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SliderContainer" type="VBoxContainer" parent="TextureRect"]
 margin_left = 49.0
@@ -76,13 +73,13 @@ __meta__ = {
 
 [node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
 hint_tooltip = "Level 1"
-text = "Mountains"
+text = "Горы"
 
 [node name="Level_2" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
 margin_left = 260.0
 margin_right = 480.0
 hint_tooltip = "Level 2"
-text = "City"
+text = "Город"
 
 [node name="Detail" type="HBoxContainer" parent="TextureRect/SliderContainer"]
 margin_top = 60.0
@@ -124,7 +121,7 @@ margin_right = 638.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "No selected track"
+text = "Трек не выбран"
 align = 1
 valign = 1
 autowrap = true
@@ -135,7 +132,7 @@ margin_right = 638.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "level: ....... 0"
+text = "уровень: ..................... 0"
 align = 1
 valign = 1
 
@@ -145,7 +142,7 @@ margin_right = 638.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "track: .......... 0	"
+text = "трасса: ....................... 0	"
 align = 1
 valign = 1
 
@@ -155,7 +152,7 @@ margin_right = 638.0
 margin_bottom = 240.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "price: .................... 0"
+text = "цена: ............................ 0"
 align = 1
 valign = 1
 __meta__ = {
@@ -183,7 +180,7 @@ anchor_bottom = 0.0
 margin_right = 400.0
 margin_bottom = 76.0
 expand = false
-title = "Main menu"
+title = "Меню"
 change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="btn_refit" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
@@ -194,7 +191,7 @@ margin_right = 840.0
 margin_bottom = 76.0
 hint_tooltip = "Progress button"
 expand = false
-title = "Tracks"
+title = "Трассы"
 icon = ExtResource( 10 )
 
 [node name="btn_pay" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
@@ -204,7 +201,7 @@ margin_left = 880.0
 margin_right = 1280.0
 margin_bottom = 76.0
 expand = false
-title = "Run"
+title = "Играть"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
