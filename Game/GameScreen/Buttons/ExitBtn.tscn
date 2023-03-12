@@ -5,7 +5,6 @@
 
 [node name="ExitBtn" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-title = "Exit"
 
 [node name="Label" parent="." index="1"]
-text = "Exit"
+text = "Выход"

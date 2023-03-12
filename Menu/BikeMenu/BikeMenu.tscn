@@ -262,7 +262,7 @@ margin_left = 880.0
 margin_right = 1280.0
 margin_bottom = 76.0
 expand = false
-title = "Играть"
+title = "Купить"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "demonstration"

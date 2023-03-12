@@ -3,7 +3,9 @@ class_name FailRow
 
 
 func _ready() -> void:
-	$PlayBtn/Label.set_text("replay")
+	# EN VERSION 
+	# $PlayBtn/Label.set_text("replay")
+	$PlayBtn/Label.set_text("заново")
 	set_time()
 
 

@@ -23,7 +23,7 @@ rect_min_size = Vector2( 158, 40 )
 margin_bottom = 40.0
 
 [node name="Label" parent="Count/Background" index="0"]
-text = "Power:"
+text = "Сила:"
 
 [node name="Value" parent="Count/Background" index="1"]
 custom_fonts/font = SubResource( 1 )

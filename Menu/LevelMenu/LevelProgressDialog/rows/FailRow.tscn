@@ -25,7 +25,6 @@ rect_min_size = Vector2( 0, 46 )
 alignment = 1
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
@@ -50,9 +49,9 @@ margin_left = 112.0
 margin_right = 758.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 646, 46 )
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "<0.0: collect the %s hourgrass>"
+custom_fonts/font = SubResource( 1 )
+text = "<0.0: собрать %s песочных часов>"
 valign = 1
 autowrap = true
 __meta__ = {
@@ -64,8 +63,8 @@ margin_left = 762.0
 margin_right = 882.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 120, 46 )
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "- rm"
 align = 1
 valign = 1
@@ -75,8 +74,8 @@ margin_left = 886.0
 margin_right = 1006.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 120, 46 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "<00:13>"
 align = 1
 valign = 1

@@ -50,7 +50,7 @@ func _on_PayBtn_pressed():
 	PlayerData.save_rms(PlayerData.rms - _track.price)
 	create_player_track(track_section)
 	# var success_en = "The %s track was paid!" % player_track_section
-	var success = "%Трек %s был оплачен!" % player_track_section
+	var success = "Трек %s был оплачен!" % player_track_section
 	field_log.success(success)
 	
 	var path_popup = "/root/LevelMenu/LevelProgressDialog"

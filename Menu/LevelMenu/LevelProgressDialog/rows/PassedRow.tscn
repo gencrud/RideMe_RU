@@ -25,9 +25,6 @@ margin_bottom = 46.0
 rect_min_size = Vector2( 0, 46 )
 alignment = 1
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Icon" type="TextureButton" parent="."]
 margin_left = 62.0

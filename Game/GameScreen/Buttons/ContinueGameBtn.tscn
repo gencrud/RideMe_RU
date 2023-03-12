@@ -5,7 +5,6 @@
 
 [node name="ContinueGameBtn" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-title = ""
 
 [node name="Label" parent="." index="1"]
-text = "Continue"
+text = "Продолжить"

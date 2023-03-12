@@ -8,4 +8,4 @@ script = ExtResource( 2 )
 change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="Label" parent="." index="1"]
-text = "Main menu"
+text = "Меню"

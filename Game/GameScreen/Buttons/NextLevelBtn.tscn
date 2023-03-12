@@ -9,4 +9,4 @@ title = "Next"
 change_scene = "res://Menu/LevelMenu/LevelMenu.tscn"
 
 [node name="Label" parent="." index="1"]
-text = "Next"
+text = "Далее"

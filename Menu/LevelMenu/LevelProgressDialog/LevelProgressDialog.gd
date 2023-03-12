@@ -78,7 +78,8 @@ func set_title(track: Node2D) -> void:
 	.set_title(track)
 	
 	if not GameData.current_level.passed_at.empty():
-		$Nine/Title.set_text("%s passed!" % [track.title])
+		# EN / RU VERSION
+		$Nine/Title.set_text("%s пройден!" % [track.title])
 		$Nine/Title.modulate = Color(0.1, 0.5, 0.1) # GREEN
 		
 		$Completed.visible = true

@@ -3,12 +3,18 @@ class_name GamePauseDie
 
 var rect_color_lose: = Color(0.56, 0.25, 0.25, 0.8)
 
-const TIME_UP_TEXT: String = 'Your time is up'
-const BROKE_BIKE_TEXT: String = 'You broke the bike'
-const FELL_TEXT: String = 'You fell and you need \r\n to try again'
-const HIT_PERSON_TEXT: String = 'You hit a person'
-const BITTEN_BY_DOG_TEXT = "You've been bitten by a dog and \r\n you need to start over!"
-
+# EN VERSION
+# const TIME_UP_TEXT: String = 'Your time is up'
+# const BROKE_BIKE_TEXT: String = 'You broke the bike'
+# const FELL_TEXT: String = 'You fell and you need \r\n to try again'
+# const HIT_PERSON_TEXT: String = 'You hit a person'
+# const BITTEN_BY_DOG_TEXT = "You've been bitten by a dog and \r\n you need to start over!"
+# RU VERSION
+const TIME_UP_TEXT: String = 'Ваше время вышло'
+const BROKE_BIKE_TEXT: String = 'Ты сломал велосипед'
+const FELL_TEXT: String = 'Вы упали, и вам нужно \r\n повторить попытку'
+const HIT_PERSON_TEXT: String = 'Вы сбили человека'
+const BITTEN_BY_DOG_TEXT = "You were bitten by a dog. Аф - аф!"
 
 enum TitleChoices {
 	TIME_UP, BROKE_BIKE, FELL, HIT_PERSON, BITTEN_BY_DOG
@@ -32,8 +38,9 @@ func get_info() -> String:
 	#if PlayerData.type_title == TitleChoices.WIN_PLAYER:
 	#	description.set_text(PlayerData.current_level.title)
 	
-	var title = "Lose: "
-	
+	# var title_en = "Losing: "
+	var title = "Проигрыш: "
+	 
 	if PlayerData.type_title == TitleChoices.FELL:
 		title += FELL_TEXT
 	elif PlayerData.type_title == TitleChoices.BROKE_BIKE:

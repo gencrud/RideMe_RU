@@ -14,7 +14,4 @@ margin_top = 4.86062
 margin_right = 83.5314
 margin_bottom = 18.8606
 rect_rotation = 19.4395
-text = "back"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "назад"

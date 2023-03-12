@@ -38,7 +38,7 @@ margin_bottom = 76.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 expand = false
-title = "Main menu"
+title = "Меню"
 change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="ResetGame2" parent="VBoxContainer" instance=ExtResource( 1 )]
@@ -50,7 +50,7 @@ margin_bottom = 172.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 expand = false
-title = "Reset game"
+title = "Сбросить"
 change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="ExitBtn" parent="VBoxContainer" instance=ExtResource( 4 )]
@@ -60,5 +60,6 @@ margin_top = 192.0
 margin_right = 400.0
 margin_bottom = 268.0
 expand = false
+title = "Выйти"
 
 [connection signal="pressed" from="VBoxContainer/ResetGame2" to="." method="_on_ResetGame_pressed"]

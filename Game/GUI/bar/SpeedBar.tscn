@@ -11,16 +11,19 @@ margin_bottom = 40.0
 script = ExtResource( 2 )
 
 [node name="Count" parent="." index="0"]
-margin_bottom = 40.0
+margin_bottom = 50.0
 
 [node name="Background" parent="Count" index="0"]
-margin_bottom = 40.0
+margin_bottom = 50.0
+
+[node name="Label" parent="Count/Background" index="0"]
+text = "Скорость:"
 
 [node name="Value" parent="Count/Background" index="1"]
 text = "0.00"
 
 [node name="Gauge" parent="." index="1"]
 margin_right = 410.0
-margin_bottom = 40.0
+margin_bottom = 50.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 3 )

@@ -14,7 +14,4 @@ margin_top = 69.2965
 margin_right = 81.7193
 margin_bottom = 83.2965
 rect_pivot_offset = Vector2( -279.068, 24.6655 )
-text = "Go go go"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "ехать"
