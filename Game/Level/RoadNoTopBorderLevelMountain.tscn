@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Road/border/BordersBottom.tscn" type="PackedScene" id=4]
+
+[node name="RoadNoTopBorderLevelMountain" type="Node2D"]
+
+[node name="RoadBody" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4.68555, 1172.92 )
+
+[node name="BordersBottom" parent="RoadBody" instance=ExtResource( 4 )]
+position = Vector2( -20.1902, 98.3113 )
+
+[node name="BordersBottom2" parent="RoadBody/BordersBottom" instance=ExtResource( 4 )]
+position = Vector2( 1367.04, 0 )
+
+[node name="BordersBottom3" parent="RoadBody/BordersBottom" instance=ExtResource( 4 )]
+position = Vector2( 2723.05, 0 )
+
+[node name="BordersBottom4" parent="RoadBody/BordersBottom" instance=ExtResource( 4 )]
+position = Vector2( 3145.54, 0 )

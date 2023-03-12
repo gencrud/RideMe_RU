@@ -1,0 +1,131 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/Level2/assets/sky.png" type="Texture" id=1]
+[ext_resource path="res://Game/Level2/assets/city_houses_2.png" type="Texture" id=2]
+[ext_resource path="res://Game/Level/assets/cloud.png" type="Texture" id=3]
+[ext_resource path="res://Game/Level2/assets/city_free.png" type="Texture" id=4]
+[ext_resource path="res://Game/Road/assets/road_1368x100.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "sweem_clouds"
+length = 40.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParallaxLayer/cloud3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2400, 840 ), Vector2( 1200, 840 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParallaxLayer/cloud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1200, 875.243 ), Vector2( 2400, 875.243 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ParallaxLayer/cloud2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1800, 800 ), Vector2( 1100, 800 ) ]
+}
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxSky" type="ParallaxLayer" parent="."]
+position = Vector2( 0, -956.931 )
+motion_scale = Vector2( 0.003, 0.01 )
+motion_mirroring = Vector2( 1368, 542 )
+
+[node name="Sky" type="Sprite" parent="ParallaxSky"]
+scale = Vector2( 1, 1.04 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ParallaxBottom" type="ParallaxLayer" parent="."]
+modulate = Color( 0.764706, 0.811765, 0.623529, 0.913725 )
+position = Vector2( 0, 176.461 )
+z_index = -1
+motion_scale = Vector2( 0.01, 0 )
+motion_mirroring = Vector2( 1368, 0 )
+
+[node name="Road1368X101" type="Sprite" parent="ParallaxBottom"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Road1368X102" type="Sprite" parent="ParallaxBottom"]
+position = Vector2( 0, 85.9941 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxBottom2" type="ParallaxLayer" parent="."]
+modulate = Color( 0.580392, 0.686275, 0.435294, 0.682353 )
+position = Vector2( 0, 268.942 )
+motion_scale = Vector2( 0.02, 0 )
+motion_mirroring = Vector2( 980, 0 )
+
+[node name="CityHouses2-free2" type="Sprite" parent="ParallaxBottom2"]
+position = Vector2( 0, 17.9594 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxMain" type="ParallaxLayer" parent="."]
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 0, -540.913 )
+motion_scale = Vector2( 0.01, 0 )
+motion_mirroring = Vector2( 1780, 0 )
+
+[node name="CityHouses2" type="Sprite" parent="ParallaxMain"]
+modulate = Color( 1, 1, 1, 0.831373 )
+scale = Vector2( 1.8, 1.6 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2( -1158, 1280 )
+motion_mirroring = Vector2( 2000, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="cloud" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1200, 152.702 )
+scale = Vector2( 0.589194, 0.589195 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[node name="cloud2" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1800, 77.4594 )
+scale = Vector2( 0.744075, 0.744075 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[node name="cloud3" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 2400, 117.46 )
+scale = Vector2( 0.479514, 0.479515 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "sweem_clouds"
+anims/sweem_clouds = SubResource( 1 )

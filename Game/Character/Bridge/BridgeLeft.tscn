@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Character/Bridge/assets/bridge-1365x100.png" type="Texture" id=1]
+[ext_resource path="res://Game/Character/Bridge/BridgeLeft.gd" type="Script" id=2]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 682.627, 5.57545 )
+
+[node name="BridgeLeft" type="StaticBody2D"]
+position = Vector2( -801.274, 716.742 )
+rotation = -0.240855
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="UpderConstarctionMinBottom" parent="." instance=ExtResource( 4 )]
+position = Vector2( 74.9506, 9.90671 )
+rotation = -1.5716
+
+[node name="UpderConstarctionMinBottom2" parent="UpderConstarctionMinBottom" instance=ExtResource( 4 )]
+position = Vector2( 0.0584412, 1162.83 )
+
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom/UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom" instance=ExtResource( 4 )]
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+
+[node name="SpriteLeft" type="Sprite" parent="."]
+position = Vector2( 74.3391, -3.3336 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionLeft" type="CollisionShape2D" parent="."]
+position = Vector2( 756.854, 51.0981 )
+shape = SubResource( 1 )
+
+[node name="UpderConstarctionMinBottom2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 74.9228, 96.6307 )
+rotation = -1.5716
+
+[node name="UpderConstarctionMinBottom2" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.0584412, 1162.83 )
+
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2/UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+
+[node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 792.829, -140.899 )
+rotation = 0.240855
+scale = Vector2( -587.902, -215.221 )
+process_parent = true
+physics_process_parent = true
+
+[connection signal="screen_exited" from="VisibilityEnabler" to="." method="_on_VisibilityEnabler_screen_exited"]

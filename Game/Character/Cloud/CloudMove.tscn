@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Character/Cloud/CloudMove.gd" type="Script" id=1]
+[ext_resource path="res://Game/Level/assets/cloud.png" type="Texture" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -7.92708, 74.273, 0, 0, 0, 0, 1424.93, 73.3292 )
+}
+
+[node name="CloudMove" type="Node2D"]
+script = ExtResource( 1 )
+speed = 100
+scale_x = 1.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -7.92708, 74.273 )
+rotate = false
+cubic_interp = false
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]
+position = Vector2( -62.6795, -4.03066 )
+texture = ExtResource( 2 )

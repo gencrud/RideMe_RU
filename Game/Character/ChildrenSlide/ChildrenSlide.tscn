@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Character/ChildrenSlide/assets/children_slide.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 147.495, 11.9693 )
+
+[node name="ChildrenSlide" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionSlide" type="CollisionPolygon2D" parent="."]
+position = Vector2( 36, 122 )
+polygon = PoolVector2Array( -35.57, 256.212, 701.633, 118.821, 921.88, 119.633, 1170, 255, 1108, 255, 923.349, 142.603, 699.745, 142.418 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 849.244, 27.5258 )
+shape = SubResource( 1 )
+
+[node name="VisibilityEnabled2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 668.135, 129.957 )
+scale = Vector2( 259.038, 101.046 )

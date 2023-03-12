@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Level/Level_3/Level_3.gd" type="Script" id=1]
+[ext_resource path="res://Game/Level/Level_3/Level_3_0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Level/Level_3/Level_3_1.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 600, 1 )
+flag_disable_z = true
+spread = 18.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 600.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = 42.0
+tangential_accel_random = 0.8
+damping = 32.26
+angle = 90.0
+scale = 5.0
+scale_random = 0.6
+color = Color( 0.388235, 0.823529, 0.956863, 1 )
+
+[node name="Level_3" type="Node2D"]
+script = ExtResource( 1 )
+start_position = Vector2( -200, 200 )
+
+[node name="WeatherRain" type="CanvasLayer" parent="."]
+
+[node name="Particles" type="Particles2D" parent="WeatherRain"]
+position = Vector2( 670, 1 )
+rotation = 1.5708
+amount = 80
+lifetime = 8.0
+process_material = SubResource( 1 )
+
+[node name="Level_3_0" parent="." instance=ExtResource( 2 )]
+
+[node name="Level_3_1" parent="." instance=ExtResource( 3 )]

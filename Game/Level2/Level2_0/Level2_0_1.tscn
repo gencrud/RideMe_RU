@@ -1,0 +1,123 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=3]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatformVertical.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.gd" type="Script" id=5]
+[ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Game/Character/Dog/Dog.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Game/Character/Refit/Refit.tscn" type="PackedScene" id=28]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[node name="Level2_0_1" type="Node"]
+
+[node name="MovingPlatform6" parent="." instance=ExtResource( 23 )]
+position = Vector2( 28454, 2968 )
+z_index = 0
+
+[node name="RoadBorder" type="Sprite" parent="MovingPlatform6"]
+position = Vector2( -69.0732, -30.8503 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="RoadBorder2" type="Sprite" parent="MovingPlatform6"]
+position = Vector2( 73.0244, -29.5137 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="Lamp" parent="." instance=ExtResource( 19 )]
+position = Vector2( 28530.7, 2615.48 )
+
+[node name="RoadBorderLevelCity4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 28595.3, 1685.46 )
+
+[node name="UpderConstarctionMin" parent="RoadBorderLevelCity4" instance=ExtResource( 2 )]
+position = Vector2( -22.2344, 1264.23 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity4/UpderConstarctionMin" instance=ExtResource( 2 )]
+position = Vector2( 0, -94.4502 )
+
+[node name="RM" parent="." instance=ExtResource( 17 )]
+position = Vector2( 28318, 3029 )
+
+[node name="RM2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 28715, 2741 )
+
+[node name="RM3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 29031, 2677 )
+script = ExtResource( 5 )
+
+[node name="StaticRock" parent="." instance=ExtResource( 22 )]
+position = Vector2( 29181.4, 2891.18 )
+rotation = 3.12253
+scale = Vector2( 1, -1 )
+physics_material_override = SubResource( 1 )
+
+[node name="Lamp2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 28822.5, 2797 )
+
+[node name="Puddle" parent="." instance=ExtResource( 24 )]
+position = Vector2( 29370.4, 2897.08 )
+
+[node name="Hourgrass2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 30543, 2799 )
+
+[node name="Dog" parent="." instance=ExtResource( 18 )]
+position = Vector2( 31000.3, 2899.16 )
+
+[node name="RoadBorderLevelCity5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 31225.6, 1685.46 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity5" instance=ExtResource( 2 )]
+position = Vector2( 2713.45, 1264.23 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity5/UpderConstarctionMin2" instance=ExtResource( 2 )]
+position = Vector2( 0, -94.4502 )
+
+[node name="Refit" parent="." instance=ExtResource( 28 )]
+position = Vector2( 31472, 2773 )
+
+[node name="MovingPlatform4" parent="." instance=ExtResource( 23 )]
+position = Vector2( 34302.4, 2856.18 )
+
+[node name="MovingPlatformVertical" parent="." instance=ExtResource( 4 )]
+position = Vector2( 34879, 3023 )
+
+[node name="RM4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 35054, 2869 )
+z_index = 1
+
+[node name="RM5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 35552.9, 2977.35 )
+z_index = 1
+
+[node name="RM6" parent="." instance=ExtResource( 17 )]
+position = Vector2( 35315.6, 2911.46 )
+z_index = 1
+
+[node name="RM7" parent="." instance=ExtResource( 17 )]
+position = Vector2( 35796.6, 3097.46 )
+z_index = 1
+
+[node name="RM8" parent="." instance=ExtResource( 17 )]
+position = Vector2( 36065.6, 3218.46 )
+z_index = 1
+
+[node name="BridgeLeft" parent="." instance=ExtResource( 1 )]
+position = Vector2( 35273.2, 3533.41 )
+
+[node name="RoadBorderSet14" parent="BridgeLeft" instance=ExtResource( 26 )]
+position = Vector2( 53.7969, 63.1628 )
+rotation = -0.00323539
+z_index = -1

@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game/Level/assets/mountains.png" type="Texture" id=1]
+[ext_resource path="res://Game/Level2/assets/sky.png" type="Texture" id=2]
+[ext_resource path="res://Game/Level/assets/cloud.png" type="Texture" id=3]
+[ext_resource path="res://Game/Level/assets/mountains_bottom.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "sweem_clouds"
+length = 40.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParallaxLayer/cloud3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2400, 840 ), Vector2( 1200, 840 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParallaxLayer/cloud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1200, 875.243 ), Vector2( 2400, 875.243 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ParallaxLayer/cloud2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1800, 800 ), Vector2( 1100, 800 ) ]
+}
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxSky" type="ParallaxLayer" parent="."]
+position = Vector2( 0, 1.23361 )
+motion_scale = Vector2( 0.002, 0.02 )
+motion_offset = Vector2( 680, 0 )
+motion_mirroring = Vector2( 1368, 542 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sky" type="Sprite" parent="ParallaxSky"]
+position = Vector2( 0, -6.34955 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxBottom" type="ParallaxLayer" parent="."]
+position = Vector2( 0, -242.09 )
+z_as_relative = false
+motion_scale = Vector2( 0.02, 0.01 )
+motion_mirroring = Vector2( 1165, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="mountains_bottom" type="Sprite" parent="ParallaxBottom"]
+position = Vector2( 0, 267.762 )
+z_index = -8
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxMain" type="ParallaxLayer" parent="."]
+modulate = Color( 1, 1, 1, 0.980392 )
+position = Vector2( 0, -207.912 )
+motion_scale = Vector2( 0.01, 0.08 )
+motion_mirroring = Vector2( 1360, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="mountains" type="Sprite" parent="ParallaxMain"]
+position = Vector2( 0, -62.9289 )
+scale = Vector2( 2.31, 2.31 )
+z_index = 1
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2( -1117.85, 28.5409 )
+motion_mirroring = Vector2( 2000, 0 )
+
+[node name="cloud" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1200, 875.243 )
+scale = Vector2( 0.589194, 0.589195 )
+texture = ExtResource( 3 )
+
+[node name="cloud2" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1800, 800 )
+scale = Vector2( 0.744075, 0.744075 )
+texture = ExtResource( 3 )
+
+[node name="cloud3" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 2400, 840 )
+scale = Vector2( 0.479514, 0.479515 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "sweem_clouds"
+anims/sweem_clouds = SubResource( 1 )

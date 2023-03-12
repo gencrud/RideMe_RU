@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Game/GameScreen/Buttons/ReloadGameBtn.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/GameScreen/Buttons/ExitBtn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/GameScreen/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Game/GameScreen/GameScreenPause.gd" type="Script" id=5]
+[ext_resource path="res://Game/Level2/assets/sky.png" type="Texture" id=6]
+[ext_resource path="res://Game/GameScreen/TimeToStart.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/GameScreen/Buttons/MainMenuBtn.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/GameScreen/Resource/RMItemResource.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/GameScreen/Resource/HourgrassItemResource.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/GameScreen/Buttons/NextLevelBtn.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Game/GameScreen/Buttons/ContinueGameBtn.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+font_data = ExtResource( 4 )
+
+[node name="GameScreenPause" type="Control"]
+pause_mode = 2
+modulate = Color( 1, 0.988235, 0.988235, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimeToStart" parent="." instance=ExtResource( 7 )]
+anchor_left = 0.0
+anchor_right = 1.0
+margin_left = 0.0
+margin_right = 0.0
+size_flags_vertical = 1
+align = 1
+valign = 1
+
+[node name="PauseRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0588235, 0.0392157, 0.0784314, 0.376471 )
+
+[node name="Title" parent="PauseRect" instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_right = 1.0
+margin_left = 0.0
+margin_top = 100.432
+margin_right = 0.0
+margin_bottom = 172.432
+text = "Paused: Game menu"
+align = 1
+autowrap = true
+
+[node name="Description" parent="PauseRect" instance=ExtResource( 3 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 0.0
+margin_top = -195.014
+margin_right = 0.0
+margin_bottom = -149.014
+custom_fonts/font = SubResource( 1 )
+text = "General description"
+align = 1
+
+[node name="LabelItems" parent="PauseRect" instance=ExtResource( 3 )]
+visible = false
+anchor_left = 0.064
+anchor_top = 0.368
+anchor_right = 0.302
+anchor_bottom = 0.664
+margin_left = 0.575996
+margin_top = 0.375977
+margin_right = 0.467987
+margin_bottom = 0.0479736
+custom_fonts/font = SubResource( 3 )
+text = "Travel time:           %s
+Distance traveled: %d m"
+valign = 1
+
+[node name="ResourceContainer" type="VBoxContainer" parent="PauseRect"]
+visible = false
+anchor_left = 0.685
+anchor_top = 0.372
+anchor_right = 0.976
+anchor_bottom = 0.661
+margin_left = -0.360474
+margin_top = -18.7449
+margin_right = 6.13354
+margin_bottom = 5.3031
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RMItemResource" parent="PauseRect/ResourceContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 81.0
+margin_right = 404.0
+margin_bottom = 121.0
+alignment = 1
+
+[node name="HourgrassItemResource" parent="PauseRect/ResourceContainer" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 125.0
+margin_right = 404.0
+margin_bottom = 165.0
+
+[node name="Container" type="VBoxContainer" parent="PauseRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.464
+margin_top = -87.5755
+margin_right = 225.536
+margin_bottom = 136.424
+custom_constants/separation = 15
+
+[node name="NextLevelBtn" parent="PauseRect/Container" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 434.0
+margin_bottom = 76.0
+is_flicker = true
+
+[node name="ContinueBtn" parent="PauseRect/Container" instance=ExtResource( 12 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 91.0
+margin_right = 434.0
+margin_bottom = 167.0
+
+[node name="ReloadGameBtn" parent="PauseRect/Container" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 182.0
+margin_right = 434.0
+margin_bottom = 258.0
+
+[node name="MainMenuBtn" parent="PauseRect/Container" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 273.0
+margin_right = 434.0
+margin_bottom = 349.0
+
+[node name="ExitBtn" parent="PauseRect/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 364.0
+margin_right = 434.0
+margin_bottom = 440.0
+
+[node name="InnerSky" type="Sprite" parent="PauseRect"]
+visible = false
+position = Vector2( -27.7183, -17.6389 )
+scale = Vector2( 1.03579, 1.08 )
+z_index = -1
+texture = ExtResource( 6 )
+centered = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

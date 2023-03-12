@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Road/RoadBody.gd" type="Script" id=1]
+[ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=2]
+[ext_resource path="res://Game/Road/RoadBodyOne.tscn" type="PackedScene" id=3]
+
+[node name="TreeRoadOneBorder" type="Node"]
+
+[node name="RoadBodyOne" type="StaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29167.5, 3193.34 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RoadBodyOne2" type="StaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29284.8, 3193.4 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RoadBodyOne3" type="StaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29403, 3193.34 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RoadBorder" type="Sprite" parent="."]
+position = Vector2( 29277.1, 3172.72 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="RoadBorder2" type="Sprite" parent="RoadBorder"]
+position = Vector2( 142.125, 0 )
+texture = ExtResource( 2 )

@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=11]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[node name="Level_2_1" type="Node"]
+
+[node name="RoadBorderLevel2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 28462.8, 133.227 )
+
+[node name="Puddle2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 29616.8, 1354 )
+
+[node name="Puddle3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 30656.8, 1354 )
+
+[node name="RM8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 31991.4, 1221.5 )
+
+[node name="Hourgrass" parent="." instance=ExtResource( 9 )]
+position = Vector2( 45940.9, 1207.94 )
+
+[node name="RoadBorderLevel3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 32944.2, 133.227 )
+z_index = -1
+
+[node name="Bench" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32431.9, 1332.57 )
+
+[node name="Bench2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32943.2, 1324.63 )
+
+[node name="Bench3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 33630.2, 1338.29 )
+
+[node name="Bench3_0" parent="Bench3" instance=ExtResource( 3 )]
+position = Vector2( 0, -60 )
+
+[node name="Bench8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 35160, 1337.05 )
+
+[node name="Bench9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 35688, 1324.33 )
+
+[node name="Bench10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 36375, 1324.34 )
+
+[node name="Bench3_0" parent="Bench10" instance=ExtResource( 3 )]
+position = Vector2( 0, -60 )
+
+[node name="RoadBorderLevel4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 37427.1, 133.227 )
+z_index = -1
+
+[node name="Bench4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 38044.6, 1323.73 )
+
+[node name="Bench5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 38256.8, 1323.27 )
+
+[node name="Bench6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 38465.4, 1323.29 )
+
+[node name="Puddle4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 39326.8, 1354 )
+
+[node name="StaticStairs2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 39800.6, 1240.36 )
+rotation = -0.0711441
+scale = Vector2( 1.30184, 1.16259 )
+
+[node name="Grass2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 40734.1, 1267 )
+
+[node name="MovingPlatform6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 41210.1, 1127.62 )
+
+[node name="RoadBorderLevel5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 41909.3, 133.227 )
+z_index = -1
+
+[node name="RM9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 42393.8, 1202.84 )
+
+[node name="StaticRock6_0" parent="." instance=ExtResource( 1 )]
+position = Vector2( 42555, 1344 )
+physics_material_override = SubResource( 1 )
+
+[node name="StaticRock6" parent="StaticRock6_0" instance=ExtResource( 1 )]
+position = Vector2( 136, -20 )
+rotation = 1.88521
+physics_material_override = SubResource( 1 )
+
+[node name="Puddle5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 43546.8, 1354 )
+
+[node name="Puddle6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 43946.8, 1346 )
+
+[node name="Puddle7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 44346.8, 1366 )
+
+[node name="Puddle8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 44746.8, 1360 )
+
+[node name="Grass" parent="." instance=ExtResource( 5 )]
+position = Vector2( 45886.8, 1266 )
+
+[node name="Bench7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 45815, 1333.82 )
+
+[connection signal="body_entered" from="Puddle2" to="Puddle2" method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="Puddle3" to="Puddle3" method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="Puddle4" to="Puddle4" method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="Puddle5" to="Puddle5" method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="Puddle6" to="Puddle6" method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="Puddle7" to="Puddle7" method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="Puddle8" to="Puddle8" method="_on_Puddle_body_entered"]

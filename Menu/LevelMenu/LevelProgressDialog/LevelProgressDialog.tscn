@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Menu/BikeMenu/assets/yes.png" type="Texture" id=2]
+[ext_resource path="res://Menu/BikeMenu/assets/no.png" type="Texture" id=3]
+[ext_resource path="res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.gd" type="Script" id=4]
+[ext_resource path="res://Game/Level/assets/completed.png" type="Texture" id=5]
+[ext_resource path="res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="LevelProgressDialog" type="PopupDialog"]
+self_modulate = Color( 0.320071, 0.259384, 0.347656, 0.980392 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -606.5
+margin_top = -341.0
+margin_right = 606.5
+margin_bottom = 341.0
+size_flags_stretch_ratio = 1.67
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nine" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 600, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Nine"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -606.5
+margin_right = 606.5
+margin_bottom = 130.064
+rect_min_size = Vector2( 0, 120 )
+custom_fonts/font = SubResource( 1 )
+text = "<Name level progress>"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TableContainer" type="VBoxContainer" parent="Nine"]
+anchor_top = 0.18
+anchor_right = 1.0
+anchor_bottom = 0.74
+margin_left = 35.0
+margin_top = -0.487999
+margin_right = -35.0
+margin_bottom = -0.638
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Nine"]
+anchor_top = 0.705
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.0300293
+rect_min_size = Vector2( 600, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_no" type="TouchScreenButton" parent="Nine/ButtonContainer"]
+position = Vector2( 31.4915, 11.4847 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 3 )
+visibility_mode = 1
+
+[node name="btn_yes" type="TouchScreenButton" parent="Nine/ButtonContainer"]
+position = Vector2( 1012.3, 10.7136 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 2 )
+visibility_mode = 1
+
+[node name="Completed" type="Sprite" parent="."]
+visible = false
+position = Vector2( 619.19, 572.587 )
+texture = ExtResource( 5 )
+
+[node name="PopupCompleted" parent="." instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="Nine/ButtonContainer/btn_no" to="." method="_on_btn_no_pressed"]
+[connection signal="pressed" from="Nine/ButtonContainer/btn_yes" to="." method="_on_btn_yes_pressed"]

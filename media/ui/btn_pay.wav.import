@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/btn_pay.wav-663b8f1ea790983d9f151d6680217b7a.sample"
+
+[deps]
+
+source_file="res://media/ui/btn_pay.wav"
+dest_files=[ "res://.import/btn_pay.wav-663b8f1ea790983d9f151d6680217b7a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

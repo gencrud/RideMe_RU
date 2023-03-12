@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Character/Cloud/CloudMove.gd" type="Script" id=1]
+[ext_resource path="res://Game/Character/Cloud/CloudMove.tscn" type="PackedScene" id=2]
+
+[node name="SkyClouds" type="ParallaxBackground"]
+
+[node name="cloud_1" type="ParallaxLayer" parent="."]
+position = Vector2( -684.157, 70.7558 )
+motion_mirroring = Vector2( 2400, 0 )
+
+[node name="CloudMove" type="Node2D" parent="cloud_1" instance=ExtResource( 2 )]
+position = Vector2( 1394.11, 528.991 )
+script = ExtResource( 1 )
+speed = 18
+scale_x = 0.4
+
+[node name="CloudMove2" type="Node2D" parent="cloud_1" instance=ExtResource( 2 )]
+position = Vector2( -217.275, 588.005 )
+script = ExtResource( 1 )
+speed = 22
+scale_x = 0.4
+
+[node name="CloudMove3" type="Node2D" parent="cloud_1" instance=ExtResource( 2 )]
+position = Vector2( 734.042, 491.146 )
+script = ExtResource( 1 )
+speed = 24
+scale_x = 0.7

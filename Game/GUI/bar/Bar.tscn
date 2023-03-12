@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game/GUI/bar/Bar.gd" type="Script" id=2]
+[ext_resource path="res://Game/GUI/assets/lifebar_bg.png" type="Texture" id=3]
+[ext_resource path="res://Game/GUI/assets/label_HP_bg.png" type="Texture" id=4]
+[ext_resource path="res://Game/GUI/assets/lifebar_fill.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "danger"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="Bar" type="HBoxContainer"]
+margin_right = 565.0
+margin_bottom = 53.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="MarginContainer" parent="."]
+margin_right = 158.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 158, 50 )
+rect_clip_content = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Background" type="NinePatchRect" parent="Count"]
+margin_right = 158.0
+margin_bottom = 53.0
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 120, 46 )
+patch_margin_left = 80
+patch_margin_right = 78
+
+[node name="Label" type="Label" parent="Count/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -86.0
+custom_fonts/font = SubResource( 1 )
+text = "Speed:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="Count/Background"]
+anchor_right = 0.975758
+anchor_bottom = 1.0
+margin_right = -7.0
+custom_fonts/font = SubResource( 2 )
+text = "2500.00"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Gauge" type="TextureProgress" parent="."]
+margin_left = 162.0
+margin_right = 558.0
+margin_bottom = 53.0
+value = 50.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/danger = SubResource( 3 )

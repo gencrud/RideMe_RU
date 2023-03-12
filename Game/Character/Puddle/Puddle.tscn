@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game/Character/Puddle/assets/puddle.png" type="Texture" id=1]
+[ext_resource path="res://Game/Character/Puddle/Puddle.gd" type="Script" id=2]
+[ext_resource path="res://Game/Character/Puddle/assets/p-1.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 23.9707
+height = 56.5303
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 80, 40, 0 )
+flag_disable_z = true
+gravity = Vector3( 0, 120, 0 )
+initial_velocity = -120.0
+angular_velocity = 80.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 20.0
+damping = 42.0
+damping_random = 0.42
+scale = 0.14
+scale_random = 0.3
+hue_variation_random = 1.0
+
+[node name="Puddle" type="Area2D"]
+position = Vector2( 0, 40 )
+rotation = -0.427762
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 60.343, 30.9518 )
+rotation = 1.70199
+shape = SubResource( 1 )
+
+[node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 141.948, 26.2682 )
+rotation = 0.427938
+scale = Vector2( 124.363, 78.0105 )
+process_parent = true
+physics_process_parent = true
+
+[node name="Particles" type="Particles2D" parent="."]
+position = Vector2( 93.5859, -16.8857 )
+rotation = 1.0472
+emitting = false
+amount = 42
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.59
+randomness = 0.3
+fract_delta = false
+process_material = SubResource( 2 )
+texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibilityEnabler" to="." method="_on_VisibilityEnabler_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler" to="." method="_on_VisibilityNotifier_screen_exited"]

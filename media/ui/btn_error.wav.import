@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/btn_error.wav-7949f27a6e7f8de2995b8cf9144bbd91.sample"
+
+[deps]
+
+source_file="res://media/ui/btn_error.wav"
+dest_files=[ "res://.import/btn_error.wav-7949f27a6e7f8de2995b8cf9144bbd91.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

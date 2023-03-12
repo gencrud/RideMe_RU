@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game/GUI/counter/RMIconContainer.tscn" type="PackedScene" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 1 )
+
+[node name="RMItemResource" type="HBoxContainer"]
+anchor_right = 0.062
+anchor_bottom = 0.052
+margin_right = -9.692
+margin_bottom = -9.936
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RMIconContainer" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+rect_scale = Vector2( 1, 1 )
+
+[node name="Icon" parent="RMIconContainer" index="0"]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+expand = true
+stretch_mode = 0
+
+[node name="Separete" type="Label" parent="."]
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 68.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 1 )
+text = " x "
+
+[node name="Value" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 7.0
+margin_right = 85.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[editable path="RMIconContainer"]

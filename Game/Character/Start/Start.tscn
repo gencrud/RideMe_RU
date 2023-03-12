@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Character/Start/assets/start.png" type="Texture" id=1]
+[ext_resource path="res://Game/Character/Start/Start.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 156, 55 )
+
+[node name="Start" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource( 2 )
+
+[node name="start" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 156.129, 54.992 )
+shape = SubResource( 1 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 73, -66.9999 )
+scale = Vector2( -156.773, -57.8846 )
+
+[connection signal="body_entered" from="." to="." method="_on_Start_body_entered"]

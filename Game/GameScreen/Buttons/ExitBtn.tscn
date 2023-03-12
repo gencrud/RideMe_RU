@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/GameScreen/Buttons/ExitBtn.gd" type="Script" id=2]
+
+[node name="ExitBtn" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Exit"
+
+[node name="Label" parent="." index="1"]
+text = "Exit"

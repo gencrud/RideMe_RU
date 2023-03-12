@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Character/Lamp/assets/lamp.png" type="Texture" id=1]
+[ext_resource path="res://Game/Character/Lamp/Lamp.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 18.6639
+height = 5.74528
+
+[node name="Lamp" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.08606, 0.9884 )
+scale = Vector2( 0.644748, 0.644747 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 19.3641, 46.0614 )
+shape = SubResource( 1 )
+
+[node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 42.4496, 67.5312 )
+scale = Vector2( 132.757, 69.8917 )
+process_parent = true
+physics_process_parent = true
+
+[connection signal="screen_exited" from="VisibilityEnabler" to="." method="_on_VisibilityEnabler_screen_exited"]

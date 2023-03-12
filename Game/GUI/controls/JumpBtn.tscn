@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/GUI/controls/assets/btn_jump.png" type="Texture" id=1]
+[ext_resource path="res://Game/GUI/controls/JumpBtn.gd" type="Script" id=2]
+
+[node name="JumpBtn" type="TouchScreenButton"]
+normal = ExtResource( 1 )
+action = "ui_select"
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 48.6511
+margin_top = 43.4835
+margin_right = 88.6511
+margin_bottom = 57.4835
+text = "jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}

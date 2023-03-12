@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Character/Hourgrass/assets/hourgrass.png" type="Texture" id=2]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.3023, 40.0645 )
+
+[node name="Hourgrass" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -10 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 27.1522, 40.0296 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier" parent="." index="3"]
+position = Vector2( 0, 54 )
+scale = Vector2( 138, 44 )

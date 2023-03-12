@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Character/Stairs/assets/stairs.png" type="Texture" id=1]
+[ext_resource path="res://Game/Character/Stairs/StaticStairs.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.87499, 32.0756 )
+
+[node name="StaticStairs" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 19.2977, 129.619, 10.2662, 54.7914, 106.605, 5.80164, 644.734, 5.80161, 747.987, 58.6092, 731, 129 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 404.5, 266 )
+scale = Vector2( 301.15, 159.9 )
+process_parent = true
+physics_process_parent = true
+
+[node name="StompDetector" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2( 14.4464, 93.413 )
+rotation = -0.114653
+shape = SubResource( 1 )
+
+[node name="Collision2" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2( 738.533, 97.3475 )
+rotation = 0.210257
+shape = SubResource( 1 )
+
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]

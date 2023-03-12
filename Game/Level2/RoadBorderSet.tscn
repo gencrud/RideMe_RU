@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Road/border/BordersBottom.tscn" type="PackedScene" id=2]
+
+[node name="RoadBorderSet" type="Node2D"]
+
+[node name="BordersBottom" parent="." instance=ExtResource( 2 )]

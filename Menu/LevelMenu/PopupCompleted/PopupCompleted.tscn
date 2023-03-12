@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game/GameScreen/Buttons/MainMenuBtn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Level/assets/completed.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 42
+outline_size = 1
+outline_color = Color( 0.164706, 0.34902, 0.52549, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 1
+outline_color = Color( 0.129412, 0.305882, 0.45098, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/bg-normal.png-5c1cec159b8dd6f7c934939c6ffcd9fb.stex"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/bg-pressed.png-1b8256320c225bb64881484185c1dbfa.stex"
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends TextureIconButton
+class_name MainMenuBtn
+
+
+func _pressed():
+	._on_pressed()
+	get_tree().paused = false
+"
+
+[node name="PopupCompleted" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="ColorRect" parent="."]
+margin_left = 22.0
+margin_top = 39.0
+margin_right = 1343.0
+margin_bottom = 750.0
+color = Color( 0.227451, 0.243137, 0.937255, 0.972549 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = -3.0
+margin_bottom = -584.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Demo game completed!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 127.0
+margin_right = -3.0
+margin_bottom = -211.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+text = "The release of the full version is expected in October 2022.
+
+Any help, feedback, comment, donation will give motivation, 
+give you confidence and help you prepare improvements faster.
+
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionMenu" parent="NinePatchRect" instance=ExtResource( 2 )]
+anchor_left = -0.198417
+anchor_top = 0.00395364
+anchor_right = 0.514859
+anchor_bottom = 0.023754
+margin_left = 456.109
+margin_top = 434.893
+margin_right = 455.871
+margin_bottom = 499.508
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 6 )
+script = SubResource( 7 )
+title = "Reset game to start again"
+change_scene = "res://Menu/OptionMenu/OptionMenu.tscn"
+is_flicker = true
+
+[node name="Label" parent="NinePatchRect/OptionMenu" index="1"]
+text = "Reset game to start again"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -216.0
+margin_top = -65.0
+margin_right = -8.0
+margin_bottom = -3.0
+size_flags_stretch_ratio = 1.24
+custom_constants/line_separation = 4
+bbcode_enabled = true
+bbcode_text = "[url=https://gencrud.com]Website: www.gencrud.com[/url]
+Email: gencrud@gmail.com
+[url=https://www.reddit.com/r/RideMe2D/]Reddit: RideMe2D[/url]"
+text = "Website: www.gencrud.com
+Email: gencrud@gmail.com
+Reddit: RideMe2D"
+
+[node name="Completed" type="Sprite" parent="NinePatchRect"]
+position = Vector2( 1201.11, 104.261 )
+texture = ExtResource( 3 )
+
+[editable path="NinePatchRect/OptionMenu"]

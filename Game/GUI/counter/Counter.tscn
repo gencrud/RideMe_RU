@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game/GUI/assets/label_HP_bg.png" type="Texture" id=2]
+[ext_resource path="res://Game/GUI/counter/RMIconContainer.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 1 )
+
+[node name="Counter" type="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 100.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="."]
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 2.74281, 0, 117.257, 46 )
+
+[node name="Value" type="Label" parent="Background"]
+margin_left = 6.0
+margin_top = 1.0
+margin_right = 100.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" parent="Background" instance=ExtResource( 3 )]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Road/assets/double_road_one.png" type="Texture" id=1]
+[ext_resource path="res://Game/Road/RoadBody.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 67.4407, 16 )
+
+[node name="DoubleRoadBodyOne" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( -0.40045, 0.19646 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 63.3813, 84.1965 )
+shape = SubResource( 1 )

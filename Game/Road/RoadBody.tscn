@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Road/assets/road_1368x100.png" type="Texture" id=1]
+[ext_resource path="res://Game/Road/RoadBody.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1124.56, 5.60373 )
+
+[node name="RoadBody" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+scale = Vector2( 1.64324, 1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 1123.73, 65.4677 )
+shape = SubResource( 1 )
+
+[node name="sprite2" type="Sprite" parent="."]
+position = Vector2( 2245.04, 0.0330019 )
+scale = Vector2( 1.64324, 1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Collision2" type="CollisionShape2D" parent="."]
+position = Vector2( 3370.48, 65.4622 )
+shape = SubResource( 1 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 1421, -199 )
+scale = Vector2( 586.4, 114.35 )
+process_parent = true
+physics_process_parent = true
+
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

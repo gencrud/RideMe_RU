@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=2]
+[ext_resource path="res://Menu/OptionMenu/OptionMenu.gd" type="Script" id=3]
+[ext_resource path="res://Game/GameScreen/Buttons/ExitBtn.tscn" type="PackedScene" id=4]
+
+[node name="OptionMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+script = ExtResource( 3 )
+
+[node name="bg-color" type="Sprite" parent="."]
+position = Vector2( -0.404572, 0.465439 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 483.0
+margin_top = 250.0
+margin_right = 883.0
+margin_bottom = 518.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Return" parent="VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
+margin_bottom = 76.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = false
+title = "Main menu"
+change_scene = "res://Menu/MainMenu/MainMenu.tscn"
+
+[node name="ResetGame2" parent="VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 400.0
+margin_bottom = 172.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = false
+title = "Reset game"
+change_scene = "res://Menu/MainMenu/MainMenu.tscn"
+
+[node name="ExitBtn" parent="VBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 400.0
+margin_bottom = 268.0
+expand = false
+
+[connection signal="pressed" from="VBoxContainer/ResetGame2" to="." method="_on_ResetGame_pressed"]

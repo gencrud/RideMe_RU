@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=2]
+
+[node name="RoadSet" type="Node2D"]
+
+[node name="RoadBody" parent="." instance=ExtResource( 2 )]
+position = Vector2( 247.116, 262.357 )
+
+[node name="RoadBody2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2675, 262.357 )
+
+[node name="RoadBody3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5106.36, 262.357 )
+
+[node name="RoadBody4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 7538.31, 262.357 )
+
+[node name="RoadBody5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9969.98, 262.357 )
+
+[node name="RoadBody6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 12401.6, 262.357 )
+
+[node name="RoadBody7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 18597.1, 262.357 )
+
+[node name="RoadBody8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 21028.8, 262.357 )
+
+[node name="RoadBody9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 23460.4, 262.357 )
+
+[node name="RoadBody10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 25891.3, 262.357 )
+
+[node name="RoadBody11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 28322.8, 262.357 )
+
+[node name="RoadBody12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 30754.7, 262.357 )
+
+[node name="RoadBody13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 33186.7, 262.357 )
+
+[node name="RoadBody14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 35618.6, 262.357 )
+
+[node name="RoadBody15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 38050.1, 262.357 )
+
+[node name="RoadBody16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 40481.6, 262.357 )
+
+[node name="RoadBody17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 42913.6, 262.357 )

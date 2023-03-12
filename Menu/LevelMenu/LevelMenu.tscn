@@ -1,0 +1,220 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://media/start_track.wav" type="AudioStream" id=2]
+[ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/LevelMenu/LevelMenu.gd" type="Script" id=4]
+[ext_resource path="res://Menu/LevelMenu/assets/empty-map.png" type="Texture" id=5]
+[ext_resource path="res://Game/Level/assets/completed.png" type="Texture" id=6]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
+[ext_resource path="res://Menu/BikeMenu/Buttons/Current.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 2
+outline_color = Color( 0.4, 0.4, 0.4, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+outline_size = 1
+outline_color = Color( 0.533333, 0.388235, 0.211765, 1 )
+font_data = ExtResource( 1 )
+
+[node name="LevelMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1366.0
+margin_bottom = 768.0
+texture = ExtResource( 7 )
+
+[node name="RMCounter" parent="TextureRect" instance=ExtResource( 9 )]
+anchor_left = 0.902
+anchor_top = 0.038
+anchor_right = 0.976
+anchor_bottom = 0.09
+margin_left = -0.290283
+margin_top = 0.152752
+margin_right = -0.374268
+margin_bottom = 0.216751
+
+[node name="Title" type="Label" parent="TextureRect"]
+margin_left = 25.8854
+margin_top = 29.3583
+margin_right = 722.885
+margin_bottom = 128.358
+custom_fonts/font = SubResource( 1 )
+text = "Choose a level:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SliderContainer" type="VBoxContainer" parent="TextureRect"]
+margin_left = 49.0
+margin_top = 133.0
+margin_right = 1328.0
+margin_bottom = 719.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="TextureRect/SliderContainer"]
+margin_right = 1279.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
+hint_tooltip = "Level 1"
+text = "Mountains"
+
+[node name="Level_2" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
+margin_left = 260.0
+margin_right = 480.0
+hint_tooltip = "Level 2"
+text = "City"
+
+[node name="Detail" type="HBoxContainer" parent="TextureRect/SliderContainer"]
+margin_top = 60.0
+margin_right = 1279.0
+margin_bottom = 420.0
+alignment = 1
+
+[node name="Image" type="CenterContainer" parent="TextureRect/SliderContainer/Detail"]
+margin_left = 8.0
+margin_right = 628.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 620, 360 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TextureRect/SliderContainer/Detail/Image"]
+position = Vector2( 23.4631, 23.9864 )
+centered = false
+
+[node name="EmptySprite" type="Sprite" parent="TextureRect/SliderContainer/Detail/Image"]
+scale = Vector2( 0.88, 0.82 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="MenuOptions" type="VBoxContainer" parent="TextureRect/SliderContainer/Detail"]
+margin_left = 641.0
+margin_right = 1279.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 400, 360 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="LevelIssue" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
+margin_right = 638.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 420, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "No selected track"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Level" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
+margin_top = 60.0
+margin_right = 638.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 420, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "level: ....... 0"
+align = 1
+valign = 1
+
+[node name="Track" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
+margin_top = 120.0
+margin_right = 638.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 420, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "track: .......... 0	"
+align = 1
+valign = 1
+
+[node name="Price" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
+margin_top = 180.0
+margin_right = 638.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 420, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "price: .................... 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="HBoxContainer" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = 266.0
+margin_right = 640.0
+margin_bottom = 342.0
+custom_constants/separation = 40
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_menu" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
+margin_bottom = 76.0
+expand = false
+title = "Main menu"
+change_scene = "res://Menu/MainMenu/MainMenu.tscn"
+
+[node name="btn_refit" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 440.0
+margin_right = 840.0
+margin_bottom = 76.0
+hint_tooltip = "Progress button"
+expand = false
+title = "Tracks"
+icon = ExtResource( 10 )
+
+[node name="btn_pay" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 880.0
+margin_right = 1280.0
+margin_bottom = 76.0
+expand = false
+title = "Run"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+max_distance = 1400.0
+
+[node name="Completed" type="Sprite" parent="."]
+visible = false
+position = Vector2( 560.823, 512.552 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_1" to="." method="_on_Level_1_pressed"]
+[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_2" to="." method="_on_Level_2_pressed"]

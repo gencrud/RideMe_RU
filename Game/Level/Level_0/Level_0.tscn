@@ -1,0 +1,234 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Game/Level/Level_0/Level_0.gd" type="Script" id=1]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/Lamp/LampsSetFour.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=5]
+[ext_resource path="res://components/advice/AdviceGoBtn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://components/advice/AdvicePower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Character/Cloud/SkyClouds.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/Level/Level_0/Level_0_0.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Game/Level/RoadNoTopBorderLevelMountain.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=21]
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.02
+rough = true
+
+[node name="Level_0" type="Node2D"]
+script = ExtResource( 1 )
+start_position = Vector2( -200, 0 )
+
+[node name="Level_0_0" parent="." instance=ExtResource( 11 )]
+
+[node name="Level_0_1" type="Node" parent="."]
+
+[node name="RoadBorderLevel4" parent="Level_0_1" instance=ExtResource( 10 )]
+position = Vector2( 17931.3, 0 )
+
+[node name="Grass" parent="Level_0_1" instance=ExtResource( 9 )]
+position = Vector2( 16661.9, 1141.61 )
+z_index = 0
+
+[node name="Bench2" parent="Level_0_1/Grass" instance=ExtResource( 3 )]
+position = Vector2( 156.584, 64.1791 )
+
+[node name="Plank" parent="Level_0_1" instance=ExtResource( 18 )]
+position = Vector2( 18383.6, 1197.26 )
+
+[node name="BenchGrassPlank" parent="Level_0_1" instance=ExtResource( 3 )]
+position = Vector2( 21263, 1191.51 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Plank2" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 18 )]
+position = Vector2( -79.6738, -71.1008 )
+
+[node name="Bench2" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 3 )]
+position = Vector2( 71.3945, 13.2377 )
+
+[node name="Bench" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 3 )]
+position = Vector2( 63.1738, -22.3811 )
+
+[node name="Grass" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 9 )]
+position = Vector2( -240.457, -38.9275 )
+z_index = 0
+
+[node name="Grass2" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 9 )]
+position = Vector2( 57.5293, -56.8611 )
+z_index = 0
+
+[node name="RM6" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
+position = Vector2( 28.1094, -253.071 )
+
+[node name="RM7" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
+position = Vector2( 281.076, -174.483 )
+
+[node name="RM8" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
+position = Vector2( 552.764, -79.4243 )
+
+[node name="Hourgrass3" parent="Level_0_1" instance=ExtResource( 21 )]
+position = Vector2( 28250, 1059 )
+
+[node name="BenchGrassPlank2" parent="Level_0_1" instance=ExtResource( 3 )]
+position = Vector2( 24822.5, 1191.51 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Plank3" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 18 )]
+position = Vector2( 240.391, -97.9088 )
+
+[node name="Plank4" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 18 )]
+position = Vector2( -79.6738, -71.1008 )
+
+[node name="Bench2" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 3 )]
+position = Vector2( 71.3945, 13.2377 )
+
+[node name="Bench" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 3 )]
+position = Vector2( 63.1738, -22.3811 )
+
+[node name="Grass" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 9 )]
+position = Vector2( -240.457, -38.9275 )
+z_index = 0
+
+[node name="Grass2" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 9 )]
+position = Vector2( 57.5293, -56.8611 )
+z_index = 0
+
+[node name="RoadBorderLevel5" parent="Level_0_1" instance=ExtResource( 10 )]
+position = Vector2( 22418.5, 0 )
+
+[node name="RM9" parent="Level_0_1" instance=ExtResource( 13 )]
+position = Vector2( 25150, 904 )
+
+[node name="RoadNoTopBorderLevelMountain" parent="Level_0_1" instance=ExtResource( 12 )]
+position = Vector2( 26911, 0.155823 )
+
+[node name="RoadBorderLevel6" parent="Level_0_1" instance=ExtResource( 10 )]
+position = Vector2( 31403.6, 0.157471 )
+
+[node name="Puddle" parent="Level_0_1" instance=ExtResource( 20 )]
+position = Vector2( 31290.9, 1211 )
+
+[node name="Bench" parent="Level_0_1" instance=ExtResource( 3 )]
+position = Vector2( 31534.1, 1194.78 )
+
+[node name="RM10" parent="Level_0_1" instance=ExtResource( 13 )]
+position = Vector2( 31331.6, 1053.71 )
+
+[node name="RM11" parent="Level_0_1" instance=ExtResource( 13 )]
+position = Vector2( 31874.7, 1005.37 )
+
+[node name="RM12" parent="Level_0_1" instance=ExtResource( 13 )]
+position = Vector2( 32410.8, 1117.23 )
+
+[node name="Grass2" parent="Level_0_1" instance=ExtResource( 9 )]
+position = Vector2( 31667.4, 1144.73 )
+
+[node name="Bench2" parent="Level_0_1" instance=ExtResource( 3 )]
+position = Vector2( 32187.7, 1194.78 )
+scale = Vector2( -1, 1 )
+
+[node name="Level_0_2" type="Node" parent="."]
+
+[node name="RoadBorderLevel7" parent="Level_0_2" instance=ExtResource( 10 )]
+position = Vector2( 35884.7, 0.157471 )
+
+[node name="UpderConstarctionMin" parent="Level_0_2/RoadBorderLevel7" instance=ExtResource( 15 )]
+position = Vector2( 4464.48, 1165.63 )
+
+[node name="StaticRock" parent="Level_0_2" instance=ExtResource( 14 )]
+position = Vector2( 35745.9, 1210.19 )
+
+[node name="StaticRock2" parent="Level_0_2" instance=ExtResource( 14 )]
+position = Vector2( 35866.7, 1210.19 )
+scale = Vector2( -1, 1 )
+
+[node name="StaticRock3" parent="Level_0_2" instance=ExtResource( 14 )]
+position = Vector2( 40168.9, 1162.17 )
+
+[node name="StaticRock4" parent="Level_0_2/StaticRock3" instance=ExtResource( 14 )]
+position = Vector2( -111.863, 50.1593 )
+
+[node name="StaticRock5" parent="Level_0_2/StaticRock3" instance=ExtResource( 14 )]
+position = Vector2( 189.863, 15.9781 )
+
+[node name="Bench3" parent="Level_0_2/StaticRock3" instance=ExtResource( 3 )]
+position = Vector2( 49.082, 15.6814 )
+
+[node name="Bench4" parent="Level_0_2/StaticRock3" instance=ExtResource( 3 )]
+position = Vector2( 92.1328, -48.6012 )
+
+[node name="Bench5" parent="Level_0_2/StaticRock3" instance=ExtResource( 3 )]
+position = Vector2( 191.527, -42.3224 )
+
+[node name="Bench" parent="Level_0_2/StaticRock3" instance=ExtResource( 3 )]
+position = Vector2( 177.173, -74.2004 )
+
+[node name="RoadBorderLevel8" parent="Level_0_2" instance=ExtResource( 10 )]
+position = Vector2( 40898, 0.157471 )
+
+[node name="UpderConstarctionMin2" parent="Level_0_2/RoadBorderLevel8" instance=ExtResource( 15 )]
+position = Vector2( -3.76953, 1188.11 )
+
+[node name="Lamp" parent="Level_0_2" instance=ExtResource( 16 )]
+position = Vector2( 40846, 934.608 )
+
+[node name="Plank5" parent="Level_0_2" instance=ExtResource( 18 )]
+position = Vector2( 40895.3, 1204.58 )
+
+[node name="Hourgrass4" parent="Level_0_2" instance=ExtResource( 21 )]
+position = Vector2( 42777, 1120 )
+
+[node name="RoadBorderLevel9" parent="Level_0_2" instance=ExtResource( 10 )]
+position = Vector2( 45390.7, 0.157471 )
+
+[node name="Hourgrass5" parent="Level_0_2" instance=ExtResource( 21 )]
+position = Vector2( 46913, 1088 )
+
+[node name="LampsSetFour" parent="Level_0_2" instance=ExtResource( 4 )]
+position = Vector2( 45037.8, 1229.82 )
+
+[node name="Finish" parent="Level_0_2" instance=ExtResource( 5 )]
+position = Vector2( 48166, 1186 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="UpderConstarction" parent="Level_0_2" instance=ExtResource( 2 )]
+position = Vector2( 49466.3, 1210.16 )
+
+[node name="StaticRock6_0" parent="Level_0_2" instance=ExtResource( 14 )]
+position = Vector2( 49702.6, 1204.08 )
+physics_material_override = SubResource( 2 )
+
+[node name="StaticRock6" parent="Level_0_2/StaticRock6_0" instance=ExtResource( 14 )]
+position = Vector2( 128.7, -55.5967 )
+rotation = 1.55683
+physics_material_override = SubResource( 2 )
+
+[node name="Advices" type="Control" parent="."]
+margin_left = 32.9226
+margin_top = 50.4824
+margin_right = 751.922
+margin_bottom = 479.482
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AdvicePower" parent="Advices" instance=ExtResource( 7 )]
+
+[node name="AdviceGoBtn" parent="Advices" instance=ExtResource( 6 )]
+
+[node name="SkyClouds2" parent="." instance=ExtResource( 8 )]
+
+[node name="SkyClouds" parent="." instance=ExtResource( 8 )]

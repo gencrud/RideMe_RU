@@ -1,0 +1,519 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "HBoxContainer",
+"class": "ActiveRow",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelProgressDialog/rows/ActiveRow.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://Game/Player/Actor.gd"
+}, {
+"base": "Reference",
+"class": "AnimatePeople",
+"language": "GDScript",
+"path": "res://Game/Character/People/scripts/AnimatePeople.gd"
+}, {
+"base": "HBoxContainer",
+"class": "Bar",
+"language": "GDScript",
+"path": "res://Game/GUI/bar/Bar.gd"
+}, {
+"base": "Area2D",
+"class": "BaseArea2D",
+"language": "GDScript",
+"path": "res://Game/Character/script/BaseArea2D.gd"
+}, {
+"base": "MarginContainer",
+"class": "BaseBikeMenu",
+"language": "GDScript",
+"path": "res://Menu/scripts/BaseBikeMenu.gd"
+}, {
+"base": "Actor",
+"class": "BasePlayer",
+"language": "GDScript",
+"path": "res://Game/Player/BasePlayer.gd"
+}, {
+"base": "PopupDialog",
+"class": "BaseProgressDialog",
+"language": "GDScript",
+"path": "res://Menu/BasePopupDialog/BaseProgressDialog.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Bench",
+"language": "GDScript",
+"path": "res://Game/Character/Bench/Bench.gd"
+}, {
+"base": "Cfg",
+"class": "BikeCfg",
+"language": "GDScript",
+"path": "res://config/BikeCfg.gd"
+}, {
+"base": "BaseBikeMenu",
+"class": "BikeMenu",
+"language": "GDScript",
+"path": "res://Menu/BikeMenu/BikeMenu.gd"
+}, {
+"base": "Area2D",
+"class": "BonusArea",
+"language": "GDScript",
+"path": "res://Game/Character/script/BonusArea.gd"
+}, {
+"base": "Reference",
+"class": "Cfg",
+"language": "GDScript",
+"path": "res://config/Cfg.gd"
+}, {
+"base": "Node2D",
+"class": "CloudMove",
+"language": "GDScript",
+"path": "res://Game/Character/Cloud/CloudMove.gd"
+}, {
+"base": "TextureIconButton",
+"class": "ContinueGameBtn",
+"language": "GDScript",
+"path": "res://Game/GameScreen/Buttons/ContinueGameBtn.gd"
+}, {
+"base": "TouchScreenButton",
+"class": "ControlBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/ControlBtn.gd"
+}, {
+"base": "Button",
+"class": "Current",
+"language": "GDScript",
+"path": "res://Menu/BikeMenu/Buttons/Current.gd"
+}, {
+"base": "Node",
+"class": "DiePlayer",
+"language": "GDScript",
+"path": "res://Game/scripts/DiePlayer.gd"
+}, {
+"base": "EmptyBike",
+"class": "DrawsterBike",
+"language": "GDScript",
+"path": "res://Game/Bike/DrawsterBike.gd"
+}, {
+"base": "Node2D",
+"class": "EmptyBike",
+"language": "GDScript",
+"path": "res://Game/Bike/EmptyBike.gd"
+}, {
+"base": "TextureIconButton",
+"class": "ExitBtn",
+"language": "GDScript",
+"path": "res://Game/GameScreen/Buttons/ExitBtn.gd"
+}, {
+"base": "ActiveRow",
+"class": "FailRow",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelProgressDialog/rows/FailRow.gd"
+}, {
+"base": "CanvasLayer",
+"class": "FieldLog",
+"language": "GDScript",
+"path": "res://components/field_log/FieldLog.gd"
+}, {
+"base": "MarginContainer",
+"class": "GUI",
+"language": "GDScript",
+"path": "res://Game/GUI/GUI.gd"
+}, {
+"base": "Node2D",
+"class": "Game",
+"language": "GDScript",
+"path": "res://Game/Game.gd"
+}, {
+"base": "Reference",
+"class": "GamePauseDie",
+"language": "GDScript",
+"path": "res://Game/GameScreen/GamePauseDie.gd"
+}, {
+"base": "Reference",
+"class": "GamePauseWin",
+"language": "GDScript",
+"path": "res://Game/GameScreen/GamePauseWin.gd"
+}, {
+"base": "Control",
+"class": "GameScreenPause",
+"language": "GDScript",
+"path": "res://Game/GameScreen/GameScreenPause.gd"
+}, {
+"base": "RigidBody2D",
+"class": "GirlBack",
+"language": "GDScript",
+"path": "res://Game/Character/People/GirlBack/GirlBack.gd"
+}, {
+"base": "TouchScreenButton",
+"class": "GoBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/GoBtn.gd"
+}, {
+"base": "BaseArea2D",
+"class": "Grass",
+"language": "GDScript",
+"path": "res://Game/Character/Grass/Grass.gd"
+}, {
+"base": "BonusArea",
+"class": "Hourgrass",
+"language": "GDScript",
+"path": "res://Game/Character/Hourgrass/Hourgrass.gd"
+}, {
+"base": "GoBtn",
+"class": "JumpBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/JumpBtn.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "KSMan",
+"language": "GDScript",
+"path": "res://Game/Character/People/KickScooter/KSMan/KSMan.gd"
+}, {
+"base": "Level_0",
+"class": "Level2_0",
+"language": "GDScript",
+"path": "res://Game/Level2/Level2_0/Level2_0.gd"
+}, {
+"base": "Level_0",
+"class": "Level2_1",
+"language": "GDScript",
+"path": "res://Game/Level2/Level2_1/Level2_1.gd"
+}, {
+"base": "Level_0",
+"class": "Level2_2",
+"language": "GDScript",
+"path": "res://Game/Level2/Level2_2/Level2_2.gd"
+}, {
+"base": "Cfg",
+"class": "LevelCfg",
+"language": "GDScript",
+"path": "res://config/LevelCfg.gd"
+}, {
+"base": "BaseBikeMenu",
+"class": "LevelMenu",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelMenu.gd"
+}, {
+"base": "BaseProgressDialog",
+"class": "LevelProgressDialog",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.gd"
+}, {
+"base": "Reference",
+"class": "LevelTrackStates",
+"language": "GDScript",
+"path": "res://Menu/scripts/LevelTrackStates.gd"
+}, {
+"base": "Node2D",
+"class": "Level_0",
+"language": "GDScript",
+"path": "res://Game/Level/Level_0/Level_0.gd"
+}, {
+"base": "Level_0",
+"class": "Level_1",
+"language": "GDScript",
+"path": "res://Game/Level/Level_1/Level_1.gd"
+}, {
+"base": "Level_0",
+"class": "Level_2",
+"language": "GDScript",
+"path": "res://Game/Level/Level_2/Level_2.gd"
+}, {
+"base": "Level_0",
+"class": "Level_3",
+"language": "GDScript",
+"path": "res://Game/Level/Level_3/Level_3.gd"
+}, {
+"base": "MarginContainer",
+"class": "LivesCounter",
+"language": "GDScript",
+"path": "res://Game/GUI/counter/LivesCounter.gd"
+}, {
+"base": "MarginContainer",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://Menu/MainMenu/MainMenu.gd"
+}, {
+"base": "TextureIconButton",
+"class": "MainMenuBtn",
+"language": "GDScript",
+"path": "res://Game/GameScreen/Buttons/MainMenuBtn.gd"
+}, {
+"base": "TouchScreenButton",
+"class": "MenuBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/MenuBtn.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MovingPlatform",
+"language": "GDScript",
+"path": "res://Game/Character/MovingPanel/MovingPlatform.gd"
+}, {
+"base": "TextureIconButton",
+"class": "NextLevelBtn",
+"language": "GDScript",
+"path": "res://Game/GameScreen/Buttons/NextLevelBtn.gd"
+}, {
+"base": "MarginContainer",
+"class": "OptionMenu",
+"language": "GDScript",
+"path": "res://Menu/OptionMenu/OptionMenu.gd"
+}, {
+"base": "FailRow",
+"class": "PassedRow",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelProgressDialog/rows/PassedRow.gd"
+}, {
+"base": "Node",
+"class": "PathData",
+"language": "GDScript",
+"path": "res://Autoload/PathData.gd"
+}, {
+"base": "ActiveRow",
+"class": "PayRow",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelProgressDialog/rows/PayRow.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Plank",
+"language": "GDScript",
+"path": "res://Game/Character/Plank/Plank.gd"
+}, {
+"base": "TextureButton",
+"class": "PlayBtn",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelProgressDialog/rows/buttons/PlayBtn.gd"
+}, {
+"base": "BasePlayer",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Game/Player/Player.gd"
+}, {
+"base": "Cfg",
+"class": "PlayerBikeCfg",
+"language": "GDScript",
+"path": "res://config/PlayerBikeCfg.gd"
+}, {
+"base": "Node",
+"class": "PlayerStompDetecter",
+"language": "GDScript",
+"path": "res://Game/scripts/PlayerStompDetecter.gd"
+}, {
+"base": "Cfg",
+"class": "PlayerTrackCfg",
+"language": "GDScript",
+"path": "res://config/PlayerTrackCfg.gd"
+}, {
+"base": "BaseArea2D",
+"class": "Puddle",
+"language": "GDScript",
+"path": "res://Game/Character/Puddle/Puddle.gd"
+}, {
+"base": "BonusArea",
+"class": "RM",
+"language": "GDScript",
+"path": "res://Game/Character/RM/RM.gd"
+}, {
+"base": "BonusArea",
+"class": "Refit",
+"language": "GDScript",
+"path": "res://Game/Character/Refit/Refit.gd"
+}, {
+"base": "TextureIconButton",
+"class": "ReloadGameBtn",
+"language": "GDScript",
+"path": "res://Game/GameScreen/Buttons/ReloadGameBtn.gd"
+}, {
+"base": "StaticBody2D",
+"class": "RoadBody",
+"language": "GDScript",
+"path": "res://Game/Road/RoadBody.gd"
+}, {
+"base": "EmptyBike",
+"class": "SataurBike",
+"language": "GDScript",
+"path": "res://Game/Bike/SataurBike.gd"
+}, {
+"base": "Area2D",
+"class": "Start",
+"language": "GDScript",
+"path": "res://Game/Character/Start/Start.gd"
+}, {
+"base": "StaticBody2D",
+"class": "StaticStairs",
+"language": "GDScript",
+"path": "res://Game/Character/Stairs/StaticStairs.gd"
+}, {
+"base": "GoBtn",
+"class": "StopBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/StopBtn.gd"
+}, {
+"base": "PlayBtn",
+"class": "TextureIconButton",
+"language": "GDScript",
+"path": "res://components/buttons/TextureIconButton.gd"
+}, {
+"base": "MarginContainer",
+"class": "Timeout",
+"language": "GDScript",
+"path": "res://Game/GUI/counter/Timeout.gd"
+}, {
+"base": "Cfg",
+"class": "TrackCfg",
+"language": "GDScript",
+"path": "res://config/TrackCfg.gd"
+} ]
+_global_script_class_icons={
+"ActiveRow": "",
+"Actor": "",
+"AnimatePeople": "",
+"Bar": "",
+"BaseArea2D": "",
+"BaseBikeMenu": "",
+"BasePlayer": "",
+"BaseProgressDialog": "",
+"Bench": "",
+"BikeCfg": "",
+"BikeMenu": "",
+"BonusArea": "",
+"Cfg": "",
+"CloudMove": "",
+"ContinueGameBtn": "",
+"ControlBtn": "",
+"Current": "",
+"DiePlayer": "",
+"DrawsterBike": "",
+"EmptyBike": "",
+"ExitBtn": "",
+"FailRow": "",
+"FieldLog": "",
+"GUI": "",
+"Game": "",
+"GamePauseDie": "",
+"GamePauseWin": "",
+"GameScreenPause": "",
+"GirlBack": "",
+"GoBtn": "",
+"Grass": "",
+"Hourgrass": "",
+"JumpBtn": "",
+"KSMan": "",
+"Level2_0": "",
+"Level2_1": "",
+"Level2_2": "",
+"LevelCfg": "",
+"LevelMenu": "",
+"LevelProgressDialog": "",
+"LevelTrackStates": "",
+"Level_0": "",
+"Level_1": "",
+"Level_2": "",
+"Level_3": "",
+"LivesCounter": "",
+"MainMenu": "",
+"MainMenuBtn": "",
+"MenuBtn": "",
+"MovingPlatform": "",
+"NextLevelBtn": "",
+"OptionMenu": "",
+"PassedRow": "",
+"PathData": "",
+"PayRow": "",
+"Plank": "",
+"PlayBtn": "",
+"Player": "",
+"PlayerBikeCfg": "",
+"PlayerStompDetecter": "",
+"PlayerTrackCfg": "",
+"Puddle": "",
+"RM": "",
+"Refit": "",
+"ReloadGameBtn": "",
+"RoadBody": "",
+"SataurBike": "",
+"Start": "",
+"StaticStairs": "",
+"StopBtn": "",
+"TextureIconButton": "",
+"Timeout": "",
+"TrackCfg": ""
+}
+
+[application]
+
+config/name="Оседлай Меня"
+config/description="Гонка БМХ. ​​​​​Прохождение гоночных трасс в качестве гонщиков bmx, контролируя свою силу и усталость, чтобы ехать быстрее и прыгать выше. Найдите свой баланс в движении и станьте лучшим среди гонщиков BMX.
+"
+run/main_scene="res://SplashScreen/SplashScreen.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="RideMe_RU"
+boot_splash/image="res://logo.png"
+config/icon="res://icon.png"
+
+[autoload]
+
+PlayerData="*res://Autoload/PlayerData.tscn"
+GameData="*res://Autoload/GameData.tscn"
+
+[display]
+
+window/size/width=1366
+window/size/height=768
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[global]
+
+music=false
+audio=false
+"отладка"=false
+
+[input]
+
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="planks"
+2d_physics/layer_3="rms"
+2d_physics/layer_4="road"
+2d_physics/layer_5="moving_panels"
+2d_physics/layer_6="girl_back"
+2d_physics/layer_7="kick_scooter"
+
+[locale]
+
+fallback="ru"
+
+[logging]
+
+file_logging/enable_file_logging.pc=false
+
+[physics]
+
+common/enable_pause_aware_picking=true
+2d/default_gravity=100
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

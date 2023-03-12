@@ -1,0 +1,172 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://media/start_track.wav" type="AudioStream" id=1]
+[ext_resource path="res://SplashScreen/assets/splash_screen/title_logo-1176x320.png" type="Texture" id=2]
+[ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/character_drawster.png" type="Texture" id=4]
+[ext_resource path="res://Menu/LevelMenu/assets/empty-map.png" type="Texture" id=5]
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/character_sataur.png" type="Texture" id=8]
+[ext_resource path="res://Menu/MainMenu/MainMenu.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 40
+custom_constants/margin_top = 80
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 80
+script = ExtResource( 11 )
+game_tscn = "res://Game/Game.tscn"
+
+[node name="bg-color" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.929412 )
+position = Vector2( 683.422, 383.792 )
+texture = ExtResource( 7 )
+
+[node name="Logo" type="Node" parent="."]
+
+[node name="Logo" type="TextureRect" parent="Logo"]
+margin_left = 976.928
+margin_top = 18.6018
+margin_right = 2152.93
+margin_bottom = 338.602
+rect_min_size = Vector2( 370, 100 )
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 60.0
+margin_top = 80.0
+margin_right = 1326.0
+margin_bottom = 688.0
+rect_min_size = Vector2( 1200, 600 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 400.0
+margin_bottom = 608.0
+rect_min_size = Vector2( 400, 600 )
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 400.0
+margin_bottom = 458.0
+size_flags_vertical = 2
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Play" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
+modulate = Color( 1, 1, 1, 0.4 )
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
+margin_bottom = 76.0
+hint_tooltip = "Play game button"
+expand = false
+title = "Играть"
+
+[node name="BikeMenu" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 106.0
+margin_right = 400.0
+margin_bottom = 182.0
+hint_tooltip = "Bike menu button"
+expand = false
+title = "Байк"
+change_scene = "res://Menu/BikeMenu/BikeMenu.tscn"
+
+[node name="LevelMenu" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 212.0
+margin_right = 400.0
+margin_bottom = 288.0
+hint_tooltip = "Level menu button"
+expand = false
+title = " Трассы"
+change_scene = "res://Menu/LevelMenu/LevelMenu.tscn"
+
+[node name="Options" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 318.0
+margin_right = 400.0
+margin_bottom = 394.0
+hint_tooltip = "Options menu button"
+expand = false
+title = "Опции"
+change_scene = "res://Menu/OptionMenu/OptionMenu.tscn"
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_top = 589.0
+margin_right = 400.0
+margin_bottom = 608.0
+custom_fonts/font = SubResource( 1 )
+text = "версия: 0.0.1"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 404.0
+margin_right = 1266.0
+margin_bottom = 608.0
+rect_min_size = Vector2( 860, 600 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty-map" type="Sprite" parent="HBoxContainer/CenterContainer"]
+position = Vector2( 434.805, 304.878 )
+scale = Vector2( 1.15359, 1.20855 )
+texture = ExtResource( 5 )
+
+[node name="CurrentTrack" type="NinePatchRect" parent="HBoxContainer/CenterContainer"]
+show_behind_parent = true
+margin_left = 31.0
+margin_top = 4.0
+margin_right = 831.0
+margin_bottom = 604.0
+rect_min_size = Vector2( 800, 600 )
+
+[node name="Characters" type="HBoxContainer" parent="HBoxContainer/CenterContainer"]
+margin_left = 31.0
+margin_top = 4.0
+margin_right = 831.0
+margin_bottom = 604.0
+rect_min_size = Vector2( 800, 600 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Sataur" type="TextureRect" parent="HBoxContainer/CenterContainer/Characters"]
+modulate = Color( 1, 1, 1, 0.258824 )
+margin_right = 380.0
+margin_bottom = 600.0
+texture = ExtResource( 8 )
+
+[node name="Drawster" type="TextureRect" parent="HBoxContainer/CenterContainer/Characters"]
+modulate = Color( 1, 1, 1, 0.258824 )
+margin_left = 420.0
+margin_top = 168.0
+margin_right = 800.0
+margin_bottom = 600.0
+size_flags_vertical = 8
+texture = ExtResource( 4 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+max_distance = 1800.0
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Play" to="." method="_on_Play_pressed"]

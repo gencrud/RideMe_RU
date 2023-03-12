@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/GUI/controls/StopBtn.gd" type="Script" id=1]
+[ext_resource path="res://Game/GUI/controls/assets/btn_stop.png" type="Texture" id=2]
+
+[node name="StopBtn" type="TouchScreenButton"]
+normal = ExtResource( 2 )
+action = "ui_left"
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 13.5314
+margin_top = 4.86062
+margin_right = 83.5314
+margin_bottom = 18.8606
+rect_rotation = 19.4395
+text = "back"
+__meta__ = {
+"_edit_use_anchors_": false
+}

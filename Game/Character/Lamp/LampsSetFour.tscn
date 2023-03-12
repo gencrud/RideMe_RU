@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=2]
+
+[node name="LampsSetFour" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lamp4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1600.55, -247.475 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -2
+
+[node name="Lamp3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -796.427, -247.475 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -2
+
+[node name="Lamp5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 196.977, -247.475 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -2
+
+[node name="Lamp7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1077.2, -247.475 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -2

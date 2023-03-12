@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game/GUI/bar/PowerBar.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends \"res://Game/GUI/bar/Bar.gd\"
+
+onready var _label_value: Label = get_node(PathData.PATH_POWER_BAR_COUNT_VALUE)
+onready var _progress: TextureProgress = $\"./Gauge\"
+
+
+func _ready() -> void:
+	_progress.max_value = player.max_power
+
+
+func _physics_process(delta: float) -> void:
+	if is_instance_valid(player):
+		do_or_stop_animation_danger(player.power, player.max_power)
+	
+	
+func set_progress_player():
+	_label_value.text = '%.2f' % player.power
+	_progress.value = player.power
+"
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="AdvicePower" type="VBoxContainer"]
+margin_left = 1276.8
+margin_top = 74.5729
+margin_right = 1979.8
+margin_bottom = 142.573
+size_flags_horizontal = 2
+size_flags_vertical = 2
+alignment = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PowerBar" parent="." instance=ExtResource( 2 )]
+rect_min_size = Vector2( 410, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 1
+script = SubResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 44.0
+margin_right = 703.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "See to it the Power to accelerate faster and better jump."
+__meta__ = {
+"_edit_use_anchors_": false
+}

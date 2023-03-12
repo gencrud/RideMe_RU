@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Game/Character/Lamp/LampsSetFour.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Game/Character/Crossroads/Crossroad.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=17]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[node name="Level_0_0" type="Node"]
+
+[node name="RoadBorderLevelUC0_0" parent="." instance=ExtResource( 17 )]
+position = Vector2( -4480.22, 0 )
+
+[node name="UpderConstarction" parent="RoadBorderLevelUC0_0" instance=ExtResource( 8 )]
+position = Vector2( -3, 1191.22 )
+
+[node name="RoadBorderLevel0_1" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2.25726, 0 )
+
+[node name="LampsSetFour" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1092.41, 1227.97 )
+
+[node name="Start" parent="." instance=ExtResource( 16 )]
+position = Vector2( -155.944, 1187.75 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="RoadBorderLevel1" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4484.48, 0 )
+
+[node name="StaticRock" parent="." instance=ExtResource( 15 )]
+position = Vector2( 4019.66, 1217.15 )
+physics_material_override = SubResource( 1 )
+
+[node name="RM" parent="." instance=ExtResource( 10 )]
+position = Vector2( 9405.87, 934.975 )
+
+[node name="StaticRock2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 6385.5, 1213.31 )
+physics_material_override = SubResource( 1 )
+
+[node name="StaticRock" parent="StaticRock2" instance=ExtResource( 15 )]
+position = Vector2( 473.984, -4.245 )
+scale = Vector2( -1, 1 )
+physics_material_override = SubResource( 1 )
+
+[node name="RoadBorderLevel2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 8965.76, 0 )
+
+[node name="Bench" parent="." instance=ExtResource( 11 )]
+position = Vector2( 9175.21, 1196.96 )
+
+[node name="Puddle" parent="Bench" instance=ExtResource( 9 )]
+position = Vector2( 83.6895, 22.1492 )
+z_index = -1
+
+[node name="Puddle2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 10514.5, 1220 )
+
+[node name="Puddle" parent="Puddle2" instance=ExtResource( 9 )]
+position = Vector2( 384.082, 166.261 )
+rotation = 0.0
+
+[node name="RM2" parent="Puddle2" instance=ExtResource( 10 )]
+position = Vector2( 286.756, -22.0864 )
+rotation = 0.427762
+
+[node name="Puddle2" parent="Puddle2" instance=ExtResource( 9 )]
+position = Vector2( 739.578, 336.587 )
+rotation = 0.0
+
+[node name="RM3" parent="Puddle2" instance=ExtResource( 10 )]
+position = Vector2( 669.466, 153.689 )
+rotation = 0.427762
+
+[node name="RoadBorderLevel3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 13446.9, 0 )
+
+[node name="Crossroad" parent="." instance=ExtResource( 14 )]
+position = Vector2( 13383.4, 1187.34 )
+
+[node name="Hourgrass" parent="." instance=ExtResource( 13 )]
+position = Vector2( 13438.9, 1050.3 )
+
+[node name="StaticRock3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 14498.1, 1209.44 )
+physics_material_override = SubResource( 1 )
+
+[node name="RM4" parent="StaticRock3" instance=ExtResource( 10 )]
+position = Vector2( 191.936, -242.437 )
+
+[node name="RM5" parent="StaticRock3" instance=ExtResource( 10 )]
+position = Vector2( 515.399, -152.057 )
+
+[node name="Puddle" parent="StaticRock3" instance=ExtResource( 9 )]
+position = Vector2( 269.253, 4.97656 )

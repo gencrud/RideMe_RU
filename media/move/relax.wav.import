@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/relax.wav-1f56ecce34a995ffe42a270e8bc4415e.sample"
+
+[deps]
+
+source_file="res://media/move/relax.wav"
+dest_files=[ "res://.import/relax.wav-1f56ecce34a995ffe42a270e8bc4415e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

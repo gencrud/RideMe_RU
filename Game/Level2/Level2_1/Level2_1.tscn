@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/Level2/Level2_1/Level2_1.gd" type="Script" id=1]
+[ext_resource path="res://Game/Level2/Level2_1/Level2_1_0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Level2/Level2_1/Level2_1_4.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Level2/Level2_1/Level2_1_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Level2/Level2_1/Level2_1_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Level2/Level2_1/Level2_1_3.tscn" type="PackedScene" id=6]
+
+[node name="Level2_1" type="Node2D"]
+position = Vector2( -84.6773, -678.334 )
+z_index = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+start_position = Vector2( -200, 400 )
+
+[node name="Level2_1_0" parent="." instance=ExtResource( 2 )]
+
+[node name="Level2_1_1" parent="." instance=ExtResource( 4 )]
+
+[node name="Level2_1_2" parent="." instance=ExtResource( 5 )]
+
+[node name="Level2_1_3" parent="." instance=ExtResource( 6 )]
+
+[node name="Level2_1_4" parent="." instance=ExtResource( 3 )]
