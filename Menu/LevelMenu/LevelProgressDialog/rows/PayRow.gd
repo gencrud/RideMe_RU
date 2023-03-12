@@ -27,24 +27,31 @@ func _on_PayBtn_button_down():
 
 func _on_PayBtn_pressed():
 	if not _track:
-		field_log.error("You have not an initial track")
+		# var error_text_en = "No track selected!"
+		var error_text = "Трек для прохождение не выбран!"
+		field_log.error(error_text)
 		return
 	
 	var track_section: = GameData.track_cfg.get_section(_track.id)
 	var player_track_section: = track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
 	
 	if GameData.player_track_cfg.config.has_section(player_track_section):
-		var message = "You have already paid for this track %s" % player_track_section
+		# var message_en = "This track is already paid - %s" % player_track_section
+		var message = "Этот трек уже оплачен - %s" % player_track_section
 		field_log.info(message)
 		return
 	
 	if PlayerData.rms < _track.price:
-		field_log.error("Need to more Rms!")
+		# var error_en = "Need to more Rms!"
+		var error = "Нужно больше Rm'ок!"
+		field_log.error(error)
 		return
 
 	PlayerData.save_rms(PlayerData.rms - _track.price)
 	create_player_track(track_section)
-	field_log.success("The %s track was paid!" % player_track_section)
+	# var success_en = "The %s track was paid!" % player_track_section
+	var success = "%Трек %s был оплачен!" % player_track_section
+	field_log.success(success)
 	
 	var path_popup = "/root/LevelMenu/LevelProgressDialog"
 	if has_node(path_popup):

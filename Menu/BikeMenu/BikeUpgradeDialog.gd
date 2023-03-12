@@ -135,8 +135,10 @@ func _on_btn_yes_pressed():
 		
 	if is_visible(): 
 		# Upgrade bike's parameters
-		if PlayerData.rms < selected_rms: 
-			field_log.error("Need to more Rms!")
+		if PlayerData.rms < selected_rms:
+			# var error_en = "Need to more Rms!"
+			var error = "Нужно больше RM'ок!"
+			field_log.error(error)
 			$AudioStreamPlayer2D.set_stream(audio_btn_error)
 			
 		elif selected_rms > 0:
@@ -148,7 +150,9 @@ func _on_btn_yes_pressed():
 				jump_value, jump_added_rms
 			)
 			
-			field_log.success("Bike's parameters was upgraded successful!")
+			# var success_en = "Bike parameters updated successfully!"
+			var success = "Параметры велосипеда успешно обновлены!"
+			field_log.success(success)
 			$AudioStreamPlayer2D.set_stream(audio_btn_pay)
 		
 		$AudioStreamPlayer2D.play()
@@ -187,7 +191,9 @@ func on_btn_added(price) -> bool:
 		$AudioStreamPlayer2D.play()
 		return true
 	else:
-		field_log.error_audio("Have not enough the Rms!", $AudioStreamPlayer2D, audio_btn_error)
+		# var error_en = "Need to more Rms!"
+		var error = "Нужно больше RM'ок!"
+		field_log.error_audio(error, $AudioStreamPlayer2D, audio_btn_error)
 		return false
 		
 

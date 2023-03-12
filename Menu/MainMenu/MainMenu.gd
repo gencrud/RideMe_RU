@@ -55,13 +55,20 @@ func field_log_start_play() -> void:
 	field_log.clear()
 	
 	if not PlayerData.player_bike:
-		field_log.error("No bike selected! You don't have a bike")
+		# var error_en = "Bike not selected. You don't have a bike!"
+		var error = "Велосипед не выбран. У тебя нет велосипеда!"
+		field_log.error(error)
 	elif not GameData.current_level:
-		field_log.error("No level selected! You don't have the current level")
+		# var error_en = "Level not selected. You don't have a level!"
+		var error = "Текущий уровень не выбран. У тебя нет текущего уровня!"
+		field_log.error(error)
 	elif not GameData.current_track:
-		field_log.error("No track selected! You don't have the current track")
+		# var error_en = "Track of level not selected. You don't have a track!"
+		var error = "Трэк уровеня не выбран. У тебя нет текущего трэка!"
+		field_log.error(error)
 	else:
-		var error = "Undefined error. You can not start play. Try ro reboot game"
+		# var error_en = "Undefined error. You cannot start play. Try ro reboot game"
+		var error = "Неопределенная ошибка. Вы не можете начать играть. Попробуйте перезагрузить игру"
 		field_log.error(error)
 
 

@@ -2,5 +2,6 @@
 *.translation
 export_presets.cfg
 .mono/
+.idea/
 _workdir/
 release/

@@ -39,8 +39,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 alignment = 1
 __meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
 [node name="PowerBar" parent="." instance=ExtResource( 2 )]
@@ -57,7 +56,7 @@ margin_bottom = 67.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 4 )
-text = "See to it the Power to accelerate faster and better jump."
+text = "Следите за силой чтобы  ехать быстрее и прыгать выше"
 __meta__ = {
 "_edit_use_anchors_": false
 }

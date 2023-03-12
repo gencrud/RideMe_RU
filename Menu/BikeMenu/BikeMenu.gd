@@ -44,7 +44,9 @@ func _on_btn_pay_pressed() -> void:
 	if not PlayerData.player_bike:
 		if selected_node and selected_node.price > 0:
 			if PlayerData.rms < selected_node.price:
-				field_log.error("Need to more Rms!")
+				# var error_en = "Need to more Rms!"
+				var error = "Нужно больше RM'ок!"
+				field_log.error(error)
 			else:
 				PlayerData.player_bike_cfg.set_bike_title(selected_node.title)
 				PlayerData.player_bike_cfg.set_max_speed(selected_node.max_speed)
@@ -58,18 +60,22 @@ func _on_btn_pay_pressed() -> void:
 				btn_pay.modulate.a = 0.4
 				
 				btn_pay.type = "Buy"
-
-				field_log.success("Bike was paid success!")
+				
+				# var success_en = "Bike paid successfully"
+				var success = "Байк успешно оплачен"
+				field_log.success(success)
 				
 				yield(get_tree().create_timer(0.4), "timeout")
 				var res := get_tree().reload_current_scene()
 				if res != OK:
 					printerr("ERROR: " + str(self) + " " + str(res) + "_on_btn_pay_pressed and reload_current_scene")
 		else:
-			var message = "A bike was not selected!"
+			# var message_en = "Bike not selected"
+			var message = "Байк не выбран"
 			field_log.error(message)
 	else:
-		var message = "You have a bike already!"
+		# var message_en = "You have a bike already"
+		var message = "У вас уже есть байк"
 		field_log.info(message)
 	
 	if PlayerData.player_bike:

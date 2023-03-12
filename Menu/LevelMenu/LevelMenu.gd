@@ -74,7 +74,8 @@ func _on_btn_refit_pressed() -> void:
 		if has_node(progress_popup_name) and get_node(progress_popup_name):
 			progress_popup_instance.open(GameData.current_level)
 	else:
-		var message = "You have not a level!"
+		# var message_en = "Level not selected"
+		var message = "Уровень не выбран"
 		field_log.error(message)
 
 
